@@ -1,3 +1,4 @@
+
 // Iniciar Socket:
 const socket = io();
 
@@ -20,7 +21,7 @@ fetch('/api/user')
     console.error('Error al obtener los datos del usuario:', error);
   });
 
-
+  
 
 // Capturamos la tabla de productos del DOM:
 const tableProd = document.getElementById('tableProd');

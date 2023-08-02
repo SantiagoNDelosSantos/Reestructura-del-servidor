@@ -6,10 +6,10 @@ import __dirname from "./utils.js";
 import { Server, Socket } from 'socket.io';
 
 // Importación de rutas:
+import cartRouter from './routes/cart.router.js';
+import msmRouter from './routes/message.router.js';
+import productsRouter from './routes/products.router.js';
 import sessionRouter from './routes/session.router.js'
-import routerMessage from './routes/message.router.js'
-import routerProducts from './routes/products.router.js';
-import routerCart from './routes/cart.router.js'
 import viewsRouter from "./routes/views.router.js";
 
 // Importación de managers:
@@ -177,8 +177,8 @@ app.use((req, res, next) => {
 });
 
 // Rutas:
-app.use('/', viewsRouter);
+app.use('/api/carts/', cartRouter);
+app.use('/api/chat/', msmRouter);
+app.use('/api/realtimeproducts', productsRouter);
 app.use('/api/sessions', sessionRouter);
-app.use('/api/chat/', routerMessage);
-app.use('/api/realtimeproducts', routerProducts);
-app.use('/api/carts/', routerCart);
+app.use('/', viewsRouter);
