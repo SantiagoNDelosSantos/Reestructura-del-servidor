@@ -117,8 +117,6 @@ function allProducts() {
           }
         });
 
-
-
     }
 
   });

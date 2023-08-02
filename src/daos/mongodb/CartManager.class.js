@@ -58,7 +58,6 @@ export default class ManagerCarts {
         }, {
             $set: updatedCartFields
         });
-        await cart.save();
         return result;
     }
 
