@@ -4,10 +4,13 @@ import {
 } from "./models/carts.model.js";
 import ManagerProducts from "./ProductsManager.class.js";
 
+// Importación de variables de entorno:
+import { envMongoURL } from "../../config.js";
+
 export default class ManagerCarts {
 
     // Conexión Mongoose:
-    connection = mongoose.connect('mongodb+srv://santiagodelossantos630:D2jqGLvQZMF9LXbB@cluster0.tmhnws9.mongodb.net/?retryWrites=true&w=majority');
+    connection = mongoose.connect( envMongoURL );
 
     productManager = new ManagerProducts();
 

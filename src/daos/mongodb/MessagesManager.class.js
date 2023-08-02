@@ -1,10 +1,13 @@
 import mongoose from "mongoose";
 import { messageModel } from "./models/messages.model.js"
 
+// Importación de variables de entorno:
+import { envMongoURL } from "../../config.js";
+
 export default class ManagerMessage {
 
     // Conexión Mongoose:
-    connection = mongoose.connect('mongodb+srv://santiagodelossantos630:D2jqGLvQZMF9LXbB@cluster0.tmhnws9.mongodb.net/?retryWrites=true&w=majority');
+    connection = mongoose.connect( envMongoURL);
 
     async nuevoMensaje(sms) {
         let result = await messageModel.create(sms);

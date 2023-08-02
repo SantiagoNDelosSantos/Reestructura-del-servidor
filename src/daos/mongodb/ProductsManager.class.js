@@ -3,10 +3,13 @@ import {
     productsModel
 } from "./models/products.model.js";
 
+// Importación de variables de entorno:
+import { envMongoURL } from "../../config.js";
+
 export default class ManagerProducts {
 
     // Conexión Mongoose:
-    connection = mongoose.connect('mongodb+srv://santiagodelossantos630:D2jqGLvQZMF9LXbB@cluster0.tmhnws9.mongodb.net/?retryWrites=true&w=majority');
+    connection = mongoose.connect( envMongoURL);
 
     async crearProducto(info) {
         let result = await productsModel.create(info);
